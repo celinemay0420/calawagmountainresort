@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Calawag Mountain Resort</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="divider"></div>
+
+    <header><h1>Calawag Mountain Resort</h1></header>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="activities.html">ACTIVITIES</a></li>
+            <li><a href="accommodation.html">ACCOMMODATION</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="blog.html">BLOGS</a></li>
+            <li><a href="contact.html">CONTACT US</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+        </ul>
+    </nav>
+    <br><br><br><br><br><br>
+   
+   
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="cmr1.jpg" alt="Calawag Mountain Resort">
+                <div class="text-overlay"><h1>Welcome to Calawag Mountain Resort</h1></div>
+            </div>
+            
+            <div class="slide">
+            <img src="cmr2.jpg" alt="Image">
+            <div class="text-overlay"><h1></h1></div>
+        </div>
+        <div class="slide">
+            <img src="cmr3.jpg" alt="Image">
+            <div class="text-overlay"><h1></h1></div>
+</div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <section style="margin-top: -30%; background-color: #f3e1f8; height: -80%;"><h1 style="text-align: center;"></h1></section>
+
+        
+            <div class="activities">
+        <h1 style="text-align: center;">Discover Adventures Awaiting You</h1>
+        <img src="rt1.jpg " alt="Image">
+        <p style="text-align: center;"><strong>River Tubing</strong></p>
+        <img src="khb2.jpg" alt="Image">
+        <p style="text-align: center;"><strong>Kawa Hot Bath</strong></p>
+        <img src="lf1.jpg" alt="Image">
+        <p style="text-align: center;"><strong>Lambaklad Fishing</strong></p>
+        <div class="see-more-container">
+            <div class="see-more-container">
+                <a href="activities.html" class="see-more-button">See More Activities</a>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="divider"></div>
+    <section id="gallery">
+        <h2>Moments Captured in Paradise</h2>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="g1.jpg" alt="Project Image 1" class="thumbnail">
+            </div>
+            <div class="gallery-item">
+                <img src="g2.jpg" alt="Project Image 2" class="thumbnail">
+            </div>
+            <div class="gallery-item">
+                <img src="g3.jpg" alt="Project Image 3" class="thumbnail">
+            </div>
+            <div class="gallery-item">
+                <img src="g4.jpg" alt="Project Image 3" class="thumbnail">
+            </div>
+            <div class="gallery-item">
+                <img src="g5.jpg" alt="Project Image 3" class="thumbnail">
+            </div>
+           
+            <br><br><br><br><br>
+            <div class="see-more-container">
+                <a style="margin-left: 130%; margin-top: -50; width: 50%;" href="gallery.html" class="see-more-button">See More</a>
+            </div>
+    </section>
+    <div style="margin-top: 30px;" class="divider"></div>
+
+</div><br><br>
+<div class="about" id="about-container">
+<h1>About Calawag Mountain Resort</h1>
+    <p>Nestled in the heart of Tibiao, Antique, Calawag Mountain Resort offers an unforgettable escape into nature's embrace. Surrounded by lush mountains and the serene river, our resort is the perfect destination for adventures and relaxation. Whether you're indulging in a soothing kawa hot bath, exploring the thrills of river tubing, or trekking to nearby waterfalls, every moment here connects you to the beauty and culture of Antique. At Calawag Mountain Resort, we take pride in delivering not only an exceptional getaway but also authentic Filipino experience, rooted in local traditions and eco-friendly practices. Come, immerse yourself in tranquility and adventure at our mountain haven.</p></div>
+
+    <script>
+       const slides = document.querySelector('.slides');
+       const totalSlides = document.querySelectorAll('.slide').length;
+       let index=0;
+       function showNextSlide(){
+        index = (index + 1)% totalSlides;
+        slides.style.transform = 'translateX('+ -(index*100)+'%)';
+       }
+        setInterval(showNextSlide, 3000);
+        function openLightbox(imageSrc){
+            const lightbox=document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            lightboxImage.src=imageSrc;
+            lightbox.style.display='block';
+            document.querySelector('header').style.display='none';
+            document.querySelector('nav').style.display='none';
+        }
+        
+         let currentImageIndex = 0;
+    const images = document.querySelectorAll('.thumbnail');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+
+    // Open the lightbox
+    function openLightbox(index) {
+        currentImageIndex = index;
+        showImage(currentImageIndex);
+        lightbox.style.display = 'block';
+    }
+
+    // Close the lightbox
+    function closeLightbox() {
+        lightbox.style.display = 'none';
+    }
+
+    // Show the current image
+    function showImage(index) {
+        currentImageIndex = index;
+        lightboxImage.src = images[currentImageIndex].src;
+    }
+
+    // Change to the next/previous image
+    function changeImage(direction) {
+        currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+        showImage(currentImageIndex);
+    }
+
+    // Add click event listeners to gallery images
+    images.forEach((img, index) => {
+        img.addEventListener('click', () => openLightbox(index));
+    });
+    </script>
+
+
+<footer>
+    <p>&copy; 2024 Calawag Mountain Resort. All rights reserved.</p>
+</footer>
+<div class="footer-divider"></div>
+    
+    
+</body>
+</html>
