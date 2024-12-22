@@ -242,7 +242,7 @@ footer{
     text-align: center;
     width: 80px;
     grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
-    margin-left: 20%;
+    margin-left: 18%;
 }
 
 .gallery-img{
